@@ -304,6 +304,9 @@ This element is used inside of `<paper-datatable>` to declare the columns to be 
 					}
 					var value = this._cast(data);
 					if(this.type.toLowerCase() == 'string'){
+						if (value === null) {
+							return '';
+						}
 						return value;
 					}else if(this.type.toLowerCase() == 'number'){
 						return value;
