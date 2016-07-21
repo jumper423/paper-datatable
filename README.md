@@ -1,4 +1,4 @@
-# paper-datatable
+# paper-datatable for angular 2
 
 A [material design implementation of a data table](https://www.google.com/design/spec/components/data-tables.html). Let's call this a pretty solid beta.
 
