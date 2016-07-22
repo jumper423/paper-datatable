@@ -1,6 +1,6 @@
 {
   "name": "paper-datatable",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "authors": [
     "David Mulder <david.mulder@ymail.com>"
   ],
@@ -11,6 +11,10 @@
     "polymer",
     "data-table"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/jumper423/paper-datatable.git"
+  },
   "main": [
     "paper-datatable.html",
     "paper-datatable-card.html"
