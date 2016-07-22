@@ -17,211 +17,168 @@
                 @apply(--paper-font-common-base);
                 position: relative;
             }
-
-            :host([resize-behavior='overflow']) #container {
+            :host([resize-behavior='overflow']) #container{
                 overflow: auto;
             }
-
-            :host([resize-behavior='dynamic-columns']) #container {
+            :host([resize-behavior='dynamic-columns']) #container{
                 overflow: auto;
             }
-
-            :host([resize-behavior='fixed']) table {
+            :host([resize-behavior='fixed']) table{
                 table-layout: fixed;
             }
-
-            :host([resize-behavior='fixed']) th {
+            :host([resize-behavior='fixed']) th{
                 overflow: hidden;
                 text-overflow: ellipsis;
             }
-
-            :host([resize-behavior='fixed']) td {
+            :host([resize-behavior='fixed']) td{
                 overflow: hidden;
             }
-
-            table {
+            table{
                 border-spacing: 0px;
-                width: 100%;
+                width:100%;
             }
-
-            tr td, tr th {
+            tr td, tr th{
                 border-bottom: 1px solid var(--paper-datatable-divider-color, --divider-color);
                 padding: 6px 28px 6px 28px;
                 box-sizing: border-box;
             }
-
-            td {
+            td{
                 height: 48px;
             }
-
-            th {
+            th{
                 font-weight: 500;
-                text-align: left;
+                text-align:left;
                 white-space: nowrap;
                 @apply(--paper-font-common-base);
                 -webkit-user-select: none;
                 -ms-user-select: none;
                 -moz-user-select: none;
                 user-select: none;
-                color: rgba(0, 0, 0, .54);
-                font-size: 12px;
+                color: rgba(0,0,0, .54);
+                font-size:12px;
                 transition: linear .1s color, padding-left .2s linear;
                 box-sizing: border-box;
                 height: 56px;
             }
-
-            th:not([data-sortable]) iron-icon.sort {
+            th:not([data-sortable]) iron-icon.sort{
                 display: none;
             }
-
             th[data-sortable] iron-icon.sort {
                 transition: transform .2s linear, width .2s linear, color .2s linear;
-                color: rgba(0, 0, 0, .26);
+                color: rgba(0,0,0, .26);
                 width: 0px;
                 @apply(--paper-datatable-column-header-sort-icon-hover);
             }
-
-            th[data-sortable] {
+            th[data-sortable]{
                 cursor: pointer;
             }
-
-            th[data-sortable]:not([data-sorted]):hover iron-icon {
+            th[data-sortable]:not([data-sorted]):hover iron-icon{
 
             }
-
-            th[data-sortable][data-sorted], th[data-sortable]:hover {
+            th[data-sortable][data-sorted], th[data-sortable]:hover{
                 padding-left: 4px;
-                color: rgba(0, 0, 0, .87);
+                color: rgba(0,0,0, .87);
                 @apply(--paper-datatable-column-header-sorted);
             }
-
-            th[data-sortable][data-sorted] iron-icon, th[data-sortable]:hover iron-icon {
+            th[data-sortable][data-sorted] iron-icon, th[data-sortable]:hover iron-icon{
                 width: 24px;
             }
-
-            th[data-sortable][data-sorted] iron-icon.sort {
-                color: rgba(0, 0, 0, .87);
+            th[data-sortable][data-sorted] iron-icon.sort{
+                color: rgba(0,0,0, .87);
                 @apply(--paper-datatable-column-header-sorted);
             }
-
-            th[data-sortable]:not([data-sorted]) iron-icon {
+            th[data-sortable]:not([data-sorted]) iron-icon{
                 transform: rotate(180deg);
             }
-
-            th[data-sortable]:not([data-sorted]):not([data-sort-direction='desc']) iron-icon {
+            th[data-sortable]:not([data-sorted]):not([data-sort-direction='desc']) iron-icon{
                 transform: rotate(0deg);
             }
-
-            th[data-sortable][data-sorted]:not([data-sort-direction='desc']) iron-icon {
+            th[data-sortable][data-sorted]:not([data-sort-direction='desc']) iron-icon{
                 transform: rotate(180deg);
             }
-
-            tr td {
+            tr td{
                 cursor: pointer;
             }
-
-            tr td.bound-cell[data-edit-icon] {
+            tr td.bound-cell[data-edit-icon]{
                 padding-right: 10px;
             }
-
-            th.column {
+            th.column{
                 @apply(--paper-datatable-column-header);
             }
-
-            tr th span {
+            tr th span{
                 vertical-align: middle;
             }
-
-            td.bound-cell {
+            td.bound-cell{
                 font-size: 13px;
-                color: rgba(0, 0, 0, .87);
+                color: rgba(0,0,0,.87);
                 @apply(--paper-datatable-cell);
             }
-
-            td.bound-cell div span {
+            td.bound-cell div span{
                 flex: 1;
             }
-
-            td.bound-cell iron-icon.editable {
+            td.bound-cell iron-icon.editable{
                 display: none;
             }
-
-            td.bound-cell div {
+            td.bound-cell div{
                 display: flex;
-                align-items: center;
+                align-items:center;
             }
-
-            td.bound-cell[data-edit-icon] iron-icon.editable {
-                color: var(--paper-datatable-icon-color, rgba(0, 0, 0, .54));
+            td.bound-cell[data-edit-icon] iron-icon.editable{
+                color: var(--paper-datatable-icon-color, rgba(0,0,0,.54));
                 width: 18px;
                 display: inline-block;
                 padding-left: 7px;
             }
-
-            td.bound-cell paper-input, td.bound-cell paper-textarea, paper-datatable-edit-dialog paper-input, paper-datatable-edit-dialog paper-textarea {
+            td.bound-cell paper-input, td.bound-cell paper-textarea, paper-datatable-edit-dialog paper-input, paper-datatable-edit-dialog paper-textarea{
                 --paper-input-container-input: {
                     font-size: 13px;
                     line-height: 1.4em;
 
                 };
             }
-
-            tr td:first-child, tr th:first-child {
+            tr td:first-child, tr th:first-child{
                 padding-left: 24px;
                 padding-right: 0px;
-                width: 56px;
-                min-width: 56px;
+                width:56px;
+                min-width:56px;
             }
-
-            tr td:nth-of-type(2), tr th:nth-of-type(2) {
+            tr td:nth-of-type(2), tr th:nth-of-type(2){
                 padding-left: 10px;
             }
-
-            td:last-of-type, th:last-of-type {
+            td:last-of-type, th:last-of-type{
                 padding-right: 24px;
             }
-
-            td:last-of-type {
+            td:last-of-type{
                 @apply(--paper-datatable-cell-last);
             }
-
-            th:last-of-type {
+            th:last-of-type{
                 @apply(--paper-datatable-column-header-last);
             }
-
-            tr[data-selected] td {
+            tr[data-selected] td{
                 background: var(--paper-datatable-row-selection-color, --paper-grey-100);
             }
-
-            tr:hover td {
+            tr:hover td{
                 background: var(--paper-datatable-row-hover-color, --paper-grey-200);
             }
-
-            tbody tr:last-of-type td {
-                border-bottom: none;
+            tbody tr:last-of-type td{
+                border-bottom:none;
             }
-
             tbody td .array-item {
                 display: inline-block;
                 @apply(--paper-datatable-array-item);
             }
-
             tbody td .class-1 {
                 @apply(--paper-datatable-class-1);
             }
-
             tbody td .class-2 {
                 @apply(--paper-datatable-class-2);
             }
-
             tbody td .class-3 {
                 @apply(--paper-datatable-class-3);
             }
-
             tbody td .class-4 {
                 @apply(--paper-datatable-class-4);
             }
-
             tbody td .class-5 {
                 @apply(--paper-datatable-class-5);
             }
@@ -230,57 +187,48 @@
             table tr.progress {
 
             }
-
-            table tr.progress th paper-progress {
+            table tr.progress th paper-progress{
                 height: 0px;
                 transition: linear .2s height;
             }
-
-            table tr.progress[data-progress] th paper-progress {
+            table tr.progress[data-progress] th paper-progress{
                 height: 3px;
             }
-
-            table tr.progress th {
+            table tr.progress th{
                 padding: 0px;
                 height: 1px;
-                border-bottom: 0px;
+                border-bottom:0px;
             }
-
-            table tr.progress th paper-progress {
+            table tr.progress th paper-progress{
                 width: 100%;
             }
-
-            paper-checkbox {
+            paper-checkbox{
                 --paper-checkbox-unchecked-color: var(--paper-datatable-checkbox-border-color, --primary-text-color);
                 --paper-checkbox-checked-color: var(--paper-datatable-checkbox-color, --accent-color);
                 @apply(--paper-datatable-checkbox);
             }
-
-            th paper-checkbox {
+            th paper-checkbox{
                 --paper-checkbox-unchecked-color: var(--paper-datatable-header-checkbox-border-color, --primary-text-color);
                 --paper-checkbox-checked-color: var(--paper-datatable-header-checkbox-color, --accent-color);
                 @apply(--paper-datatable-header-checkbox);
             }
-
-            .partialSelectionContainer {
-                width: 18px;
-                height: 18px;
-                position: relative;
-                display: flex;
-                align-items: center;
-                justify-content: center;
+            .partialSelectionContainer{
+                width:18px;
+                height:18px;
+                position:relative;
+                display:flex;
+                align-items:center;
+                justify-content:center;
             }
-
-            .partialSelection {
-                width: 6px;
-                height: 2px;
-                background: var(--paper-datatable-header-checkbox-border-color, rgba(0, 0, 0, .54));
-                border-radius: 1px;
+            .partialSelection{
+                width:6px;
+                height:2px;
+                background: var(--paper-datatable-header-checkbox-border-color, rgba(0,0,0,.54));
+                border-radius:1px;
                 transition: transform .1s linear;
                 transform: scale(0) rotate(-45deg);
             }
-
-            .partialSelection[data-checked] {
+            .partialSelection[data-checked]{
                 transform: scale(1) rotate(0deg);
             }
         </style>
@@ -295,17 +243,13 @@
                             <template is="dom-if" if="{{multiSelection}}">
                                 <div class="partialSelectionContainer" style="">
                                     <div class="partialSelection" data-checked$="[[_partialSelection]]"></div>
-                                    <paper-checkbox on-tap="toggleAll"
-                                                    checked="[[_allChecked(selectedKeys.splices, data.*)]]"
-                                                    style="position:absolute;left:0px;top:0px;"></paper-checkbox>
+                                    <paper-checkbox on-tap="toggleAll" checked="[[_allChecked(selectedKeys.splices, data.*)]]" style="position:absolute;left:0px;top:0px;"></paper-checkbox>
                                 </div>
                             </template>
                         </th>
                     </template>
-                    <template id="columnRepeat" is="dom-repeat" items="{{_columns}}" as="column"
-                              on-dom-change="_columnsRendered">
-                        <th class="column" data-sortable$="[[column.sortable]]" data-column="[[column]]"
-                            on-tap="_handleSort" style$="{{column._styleString}}">
+                    <template id="columnRepeat" is="dom-repeat" items="{{_columns}}" as="column" on-dom-change="_columnsRendered">
+                        <th class="column" data-sortable$="[[column.sortable]]" data-column="[[column]]" on-tap="_handleSort" style$="{{column._styleString}}">
                             <iron-icon icon="datatable:sort-desc-md" class="sort"></iron-icon>
                             <span id="title">{{column.header}}</span>
                             <template is="dom-if" if="[[column.tooltip]]">
@@ -326,28 +270,22 @@
                 </tr>
                 </thead>
                 <tbody>
-                <template id="rowRepeat" is="dom-repeat" items="[[_rowKeys]]" as="rowKey"
-                          on-dom-change="_restructureData">
+                <template id="rowRepeat" is="dom-repeat" items="[[_rowKeys]]" as="rowKey" on-dom-change="_restructureData">
                     <!--
                      duplication due to https://github.com/David-Mulder/paper-datatable/issues/3 ...
                     -->
                     <template is="dom-if" if="{{multiSelection}}">
-                        <tr data-key$="{{rowKey}}" data-selected$="[[_isRowSelected(rowKey, selectedKeys.splices)]]"
-                            style$="{{_customRowStyle(rowKey)}}">
+                        <tr data-key$="{{rowKey}}" data-selected$="[[_isRowSelected(rowKey, selectedKeys.splices)]]" style$="{{_customRowStyle(rowKey)}}">
                             <template is="dom-if" if="{{selectable}}">
                                 <td on-tap="_cellTapped">
                                     <!-- a somewhat specific 'hack' for <paper-datatable-card> :/ -->
                                     <!-- <template is="dom-if" if="{{!_isEqual(rowKey, '__new__')}}"> -->
-                                    <paper-checkbox checked="[[_isRowSelected(rowKey, selectedKeys.splices)]]"
-                                                    on-change="_setSelection"></paper-checkbox>
+                                    <paper-checkbox checked="[[_isRowSelected(rowKey, selectedKeys.splices)]]" on-change="_setSelection"></paper-checkbox>
                                     <!-- </template> -->
                                 </td>
                             </template>
-                            <template id="cellRepeat" is="dom-repeat" items="{{_columns}}" as="column"
-                                      on-dom-change="_restructureData">
-                                <td data-empty class="bound-cell" data-column="{{column}}"
-                                    data-editable$="{{column.editable}}" data-edit-icon$="{{column.editIcon}}"
-                                    on-tap="_cellTapped">
+                            <template id="cellRepeat" is="dom-repeat" items="{{_columns}}" as="column" on-dom-change="_restructureData">
+                                <td data-empty class="bound-cell" data-column="{{column}}" data-editable$="{{column.editable}}" data-edit-icon$="{{column.editIcon}}" on-tap="_cellTapped">
                                     <div>
                                         <span></span>
                                         <iron-icon icon="datatable:editable" class="editable"></iron-icon>
@@ -357,19 +295,14 @@
                         </tr>
                     </template>
                     <template is="dom-if" if="{{!multiSelection}}">
-                        <tr data-key$="{{rowKey}}" data-selected$="[[_isRowSelected(rowKey, selectedKey)]]"
-                            style$="{{_customRowStyle(rowKey)}}">
+                        <tr data-key$="{{rowKey}}" data-selected$="[[_isRowSelected(rowKey, selectedKey)]]" style$="{{_customRowStyle(rowKey)}}">
                             <template is="dom-if" if="{{selectable}}">
                                 <td on-tap="_cellTapped">
-                                    <paper-checkbox checked="[[_isRowSelected(rowKey, selectedKey)]]"
-                                                    on-change="_setSelection"></paper-checkbox>
+                                    <paper-checkbox checked="[[_isRowSelected(rowKey, selectedKey)]]" on-change="_setSelection"></paper-checkbox>
                                 </td>
                             </template>
-                            <template id="cellRepeat" is="dom-repeat" items="{{_columns}}" as="column"
-                                      on-dom-change="_restructureData">
-                                <td data-empty class="bound-cell" data-column="{{column}}"
-                                    data-editable$="{{column.editable}}" data-edit-icon$="{{column.editIcon}}"
-                                    on-tap="_cellTapped">
+                            <template id="cellRepeat" is="dom-repeat" items="{{_columns}}" as="column" on-dom-change="_restructureData">
+                                <td data-empty class="bound-cell" data-column="{{column}}" data-editable$="{{column.editable}}" data-edit-icon$="{{column.editIcon}}" on-tap="_cellTapped">
                                     <div>
                                         <span></span>
                                         <iron-icon icon="datatable:editable" class="editable"></iron-icon>
@@ -565,49 +498,43 @@
                     'iron-resize': '_resizeListener'
                 },
 
-                ready: function () {
+                ready: function() {
                     this.set('_columns', []);
                     this.set('selectedKeys', []);
-                    this._observer = Polymer.dom(this).observeNodes(function (info) {
+                    this._observer = Polymer.dom(this).observeNodes(function(info) {
                         this._queryAndSetColumns();
                         //this.processNewNodes(info.addedNodes);
                         //this.processRemovedNodes(info.removedNodes);
                     });
                 },
 
-                _queryAndSetColumns: function () {
+                _queryAndSetColumns: function(){
                     var columns = this.queryAllEffectiveChildren('paper-datatable-column');
-                    columns.forEach((column) = > {
-                        if(
-                    !column.beenAttached.state.ready
-                    )
-                    {
+                    columns.forEach((column) => {
+                        if(!column.beenAttached.state.ready){
                         column.parentNodeRef = this;
-                        this.async(function () {
+                        this.async(function(){
                             column._registerEvilFunctions();
                             column.beenAttached.ready();
                         });
                     }
-                })
-                    ;
-                    this.set('_columns', columns.filter((column) = > !column.inactive)
-                    )
-                    ;
-                    this.async(function () {
+                });
+                    this.set('_columns', columns.filter((column) => !column.inactive));
+                    this.async(function(){
                         this._applySortedIndicatorsToDOM();
                     });
                 },
 
-                _setRowKeys: function () {
+                _setRowKeys: function(){
                     var rowKeys = [];
                     this._dataKeyCollection = Polymer.Collection.get(this.data);
-                    this.data.forEach(function (row) {
+                    this.data.forEach(function(row){
                         var key = this._dataKeyCollection.getKey(row);
-                        if ('filter' in this) {
-                            if (this.filter(row, key, this.data)) {
+                        if('filter' in this){
+                            if(this.filter(row, key, this.data)){
                                 rowKeys.push(key);
                             }
-                        } else {
+                        }else{
                             rowKeys.push(key);
                         }
 
@@ -621,53 +548,48 @@
                  * If you have been changing data on the `data` property outside of the official Polymer functions
                  * calling this function *may* get you the updates you want.
                  */
-                reload: function () {
+                reload: function(){
                     this._setRowKeys();
                 },
 
                 /**
                  * Hardcore reset of the entire element. Sets `data` to `[]` and resets all cells.
                  */
-                reset: function () {
+                reset: function(){
                     this.set('data', []);
                     this._reset();
                 },
 
-                _reset: function () {
+                _reset: function(){
                     var cells = Polymer.dom(this.root).querySelectorAll('.bound-cell');
                     cells.forEach(this._resetCell.bind(this));
                     this.$.rowRepeat.render();
-                    Polymer.dom(this.root).querySelectorAll('#cellRepeat').forEach((cr) = > cr.render()
-                    )
-                    ;
+                    Polymer.dom(this.root).querySelectorAll('#cellRepeat').forEach((cr) => cr.render());
                 },
 
-                _resetCell: function (cell) {
+                _resetCell: function(cell){
                     cell.setAttribute('data-empty', true);
                     cell.removeAttribute('data-row-key');
                     delete cell.dataColumn;
                     delete cell.instance;
                 },
 
-                _restructureData: function () {
+                _restructureData: function(){
 
-                    this.debounce('restructure data', function () {
+                    this.debounce('restructure data', function(){
 
                         var rows = Polymer.dom(this.root).querySelectorAll('tbody tr');
                         // loop through the rows
-                        for (var rowI = 0; rowI < rows.length; rowI++) {
+                        for(var rowI=0; rowI<rows.length; rowI++){
                             var row = rows[rowI];
                             //find the data that belongs with the row
-                            var rowData = this.get(['data', row.dataset.key]);
+                            var rowData = this.get(['data',row.dataset.key]);
 
                             var cells = Polymer.dom(row).querySelectorAll('.bound-cell');
 
-                            cells.forEach((cell) = > {
+                            cells.forEach((cell) => {
 
-                                if(
-                            !cell.dataColumn
-                        )
-                            {
+                                if(!cell.dataColumn){
                                 console.log(cell);
                             }
 
@@ -675,7 +597,7 @@
                             var isWrongRow = cell.getAttribute('data-row-key') !== row.dataset.key;
                             var isWrongColumn = cell.dataColumn !== cell.dataBoundColumn;
 
-                            if (isEmpty || isWrongRow || isWrongColumn) {
+                            if(isEmpty || isWrongRow || isWrongColumn){
                                 cell.removeAttribute('data-empty');
                                 var prop = cell.dataColumn.property;
                                 var data = rowData[prop];
@@ -683,19 +605,19 @@
                                 cell.setAttribute('data-row-key', row.dataset.key);
                                 cell.dataBoundColumn = cell.dataColumn;
 
-                                if (cell.dataColumn.cellStyle.length > 0) {
+                                if(cell.dataColumn.cellStyle.length > 0){
                                     cell.setAttribute('style', cell.dataColumn.cellStyle);
-                                } else {
+                                }else{
                                     cell.setAttribute('style', '');
                                 }
-                                if (cell.style['text-align'] == '' && cell.dataColumn.align) {
+                                if(cell.style['text-align'] == '' && cell.dataColumn.align){
                                     cell.style['text-align'] = cell.dataColumn.align;
                                 }
                                 //if(cell.style['min-width'] == '' && cell.dataColumn.width){
                                 //	cell.style['min-width'] = cell.dataColumn.width;
                                 //}
 
-                                if (cell.dataColumn.template && !cell.dataColumn.dialog) {
+                                if(cell.dataColumn.template && !cell.dataColumn.dialog){
                                     var instance = cell.dataColumn._createCellInstance(
                                             rowData,
                                             row.dataset.key
@@ -704,64 +626,61 @@
                                     cell.instanceType = 'inline';
                                     cell.querySelector('span').innerHTML = '';
                                     cell.querySelector('span').appendChild(instance.root);
-                                } else {
-                                    if (cell.instance)
+                                }else{
+                                    if(cell.instance)
                                         delete cell.instance;
                                     cell.querySelector('span').innerHTML = cell.dataColumn._formatValue(data, rowData);
                                     //cell.textContent = data;
                                 }
                             }
-                        })
-                            ;
+                        });
 
                         }
                     });
 
                 },
 
-                _notifyPathOnInstances: function (change) {
-                    if (change.path === 'data') {
+                _notifyPathOnInstances: function(change){
+                    if(change.path === 'data'){
                         //not too happy about this 'hack', but it will have to do for the moment
                         var cells = Polymer.dom(this.root).querySelectorAll('.bound-cell');
-                        if (cells.length > 0) {
-                            cells.forEach((cell) = > cell.setAttribute('data-row-key', '')
-                        )
-                            ;
+                        if(cells.length > 0){
+                            cells.forEach((cell) => cell.setAttribute('data-row-key', ''));
                             this._restructureData();
                         }
                     }
                     var path = change.path.split('.');
                     //console.log('_notifyPathOnInstances', path, change);
-                    if (path.length >= 3) {
+                    if(path.length >= 3){
                         var object = path.shift();
                         var rowKey = path.shift();
 
-                        var row = Polymer.dom(this.root).querySelector('tbody tr[data-key=\'' + rowKey + '\']');
+                        var row = Polymer.dom(this.root).querySelector('tbody tr[data-key=\''+rowKey+'\']');
 
-                        if (!row) {
+                        if(!row){
                             console.error('critical failure');
                             console.log('key', rowKey);
                             return false;
                         }
 
                         var cells = row.querySelectorAll('td.bound-cell');
-                        for (var i = 0; i < cells.length; i++) {
+                        for(var i=0; i<cells.length;i++){
                             var cell = cells[i];
                             var prop = cell.dataColumn.property;
 
-                            if (prop == path[0]) {
-                                if (cell.instance) {
+                            if(prop == path[0]){
+                                if(cell.instance){
                                     var localPath = path.slice();
                                     localPath.shift();
                                     var instanceValuePath = ['value'].concat(localPath);
                                     //console.info(cell, "prop column value path", instanceValuePath, "to", change.value);
                                     cell.instance.notifyPath(instanceValuePath, change.value);
                                 }
-                                if (!cell.instance || cell.instanceType == 'dialog') {
-                                    cell.querySelector('span').innerHTML = this._columns[i]._formatValue(this.get([object, rowKey, prop]), object);
+                                if(!cell.instance || cell.instanceType == 'dialog'){
+                                    cell.querySelector('span').innerHTML = this._columns[i]._formatValue(this.get([object, rowKey, prop]));
                                 }
                             }
-                            if (cell.instance) {
+                            if(cell.instance){
                                 var instancePath = ['item'].concat(path);
                                 cell.instance.notifyPath(instancePath, change.value, true);
                             }
@@ -774,15 +693,15 @@
                  * Triggered by clicking the top left checkmark. If all are checked it will deselect all checked items.
                  * If some or none are checked it will select all items
                  */
-                toggleAll: function () {
+                toggleAll: function(){
                     var triggeredEvent = this.fire('toggle-all', {}, {cancelable: true});
 
-                    if (!triggeredEvent.defaultPrevented) {
+                    if(!triggeredEvent.defaultPrevented){
                         var allChecked = this._allChecked();
-                        this.data.forEach(function (item) {
-                            if (allChecked) {
+                        this.data.forEach(function(item){
+                            if(allChecked){
                                 this.deselect(item);
-                            } else {
+                            }else{
                                 this.select(item);
                             }
                         }.bind(this));
@@ -795,18 +714,18 @@
                  * @param item
                  * @param Boolean [notify=false] whether to trigger a `selection-changed` event.
                  */
-                select: function (item, notify) {
+                select: function(item, notify){
                     notify = typeof notify === 'undefined' ? true : notify;
 
                     var key = this._getKeyByItem(item);
-                    if (this.multiSelection) {
-                        if (this.selectedKeys.indexOf(key) == -1) {
+                    if(this.multiSelection){
+                        if(this.selectedKeys.indexOf(key) == -1){
                             this.push('selectedKeys', key);
-                            if (notify) this.fire('selection-changed', {selected: [key]});
+                            if(notify) this.fire('selection-changed', {selected: [key]});
                         }
-                    } else {
+                    }else{
                         this.set('selectedKey', key);
-                        if (notify) this.fire('selection-changed', {selected: [key]});
+                        if(notify) this.fire('selection-changed', {selected: [key]});
                     }
                 },
 
@@ -816,103 +735,103 @@
                  * @param item
                  * @param Boolean [notify=false] whether to trigger a `selection-changed` event.
                  */
-                deselect: function (item, notify) {
+                deselect: function(item, notify){
                     notify = typeof notify === 'undefined' ? true : notify;
 
                     var key = this._getKeyByItem(item);
-                    if (this.multiSelection) {
+                    if(this.multiSelection){
                         var i = this.selectedKeys.indexOf(key);
                         this.splice('selectedKeys', i, 1);
-                        if (notify) this.fire('selection-changed', {deselected: [key]});
-                    } else {
-                        if (notify) this.fire('selection-changed', {deselected: [key]});
+                        if(notify) this.fire('selection-changed', {deselected: [key]});
+                    }else{
+                        if(notify) this.fire('selection-changed', {deselected: [key]});
                         this.set('selectedKey', undefined);
                     }
                 },
                 /**
                  * Deselect all currently selected items. Ignore the `notify` parameter.
                  */
-                deselectAll: function (notify) {
-                    if (this.multiSelection) {
-                        this.selectedItems.forEach(function (item) {
+                deselectAll: function(notify){
+                    if(this.multiSelection) {
+                        this.selectedItems.forEach(function(item){
                             this.deselect(item, notify);
                         }.bind(this))
-                    } else {
+                    }else{
                         this.deselect(this.selectedItem, notify);
                     }
                 },
 
-                _allChecked: function () {
+                _allChecked: function(){
                     var allChecked = true;
-                    this.data.forEach(function (item) {
+                    this.data.forEach(function(item){
                         var key = this._dataKeyCollection.getKey(item);
-                        if (this.selectedKeys.indexOf(key) == -1) {
+                        if(this.selectedKeys.indexOf(key) == -1){
                             allChecked = false;
                         }
                     }.bind(this));
                     return allChecked && this.data.length > 0;
                 },
 
-                _someChecked: function () {
+                _someChecked: function(){
                     return this.selectedKeys.length > 0 && !this._allChecked();
                 },
 
-                _isRowSelected: function (key) {
-                    if (this.multiSelection) {
+                _isRowSelected: function(key){
+                    if(this.multiSelection){
                         return this.selectedKeys.indexOf(key) > -1;
-                    } else {
+                    }else{
                         return this.selectedKey == key;
                     }
                 },
 
-                _setSelection: function (ev) {
+                _setSelection: function(ev){
                     var key = ev.model.rowKey;
-                    if (ev.target.checked) {
-                        if (this.multiSelection) {
+                    if(ev.target.checked){
+                        if(this.multiSelection){
                             this.push('selectedKeys', key);
                             this.fire('selection-changed', {selected: [key]});
-                        } else {
-                            if (this.selectedKey) {
+                        }else{
+                            if(this.selectedKey){
                                 this.fire('selection-changed', {selected: [key], deselected: [this.selectedKey]});
-                            } else {
+                            }else{
                                 this.fire('selection-changed', {selected: [key]});
                             }
                             this.selectedKey = key;
                         }
-                    } else {
-                        if (this.multiSelection) {
+                    }else{
+                        if(this.multiSelection){
                             this.splice('selectedKeys', this.selectedKeys.indexOf(key), 1);
                             this.fire('selection-changed', {deselected: [key]});
-                        } else {
+                        }else{
                             this.fire('selection-changed', {deselected: [key]});
                             this.selectedKey = null;
                         }
                     }
                 },
 
-                _toggleSelection: function (key) {
-                    if (this.selectable) {
+                _toggleSelection: function(key){
+                    if(this.selectable){
                         /*if(id == '__new__'){
                          return false;
                          }*/
-                        if (this.multiSelection) {
+                        if(this.multiSelection){
                             var checked = this.selectedKeys.indexOf(key) > -1;
-                            if (checked) {
+                            if(checked){
                                 this.splice('selectedKeys', this.selectedKeys.indexOf(key), 1);
                                 this.fire('selection-changed', {deselected: [key]});
-                            } else {
+                            }else{
                                 this.push('selectedKeys', key);
                                 this.fire('selection-changed', {selected: [key]});
                             }
-                        } else {
+                        }else{
                             var checked = this.selectedKey == key;
-                            if (checked) {
+                            if(checked){
                                 this.selectedKey = null;
                                 this.fire('selection-changed', {deselected: [key]});
-                            } else {
-                                if (this.selectedKey) {
+                            }else{
+                                if(this.selectedKey){
                                     this.fire('selection-changed', {selected: [key], deselected: [this.selectedKey]});
-                                } else {
+                                }else{
                                     this.fire('selection-changed', {selected: [key]});
                                 }
                                 this.selectedKey = key;
@@ -925,53 +844,51 @@
                  * Sort the specified column, where `column` is a reference to the actual `<paper-datatable-column>`
                  * element.
                  */
-                sort: function (column) {
-                    this.async(function () {
+                sort: function(column){
+                    this.async(function(){
 
-                        var triggeredEvent = this.fire('sort', {
-                            sort: {
-                                property: column.property,
-                                direction: column.sortDirection
-                            }, column: column
-                        }, {cancelable: true});
+                        var triggeredEvent = this.fire('sort', {sort: {
+                            property: column.sortProperty ? column.sortProperty : column.property,
+                            direction: column.sortDirection
+                        }, column: column}, {cancelable: true});
 
                         this.set('_currentlySortedColumn', column);
 
                         this._applySortedIndicatorsToDOM();
 
-                        if (triggeredEvent.defaultPrevented) {
+                        if(triggeredEvent.defaultPrevented){
                             this._internalSortEnabled = false;
-                        } else {
+                        }else{
                             this._internalSortEnabled = true;
                             this._internalSort(column);
                         }
                     });
                 },
 
-                _applySortedIndicatorsToDOM: function () {
+                _applySortedIndicatorsToDOM: function(){
                     var previouslySortedTh = Polymer.dom(this.root).querySelector("th[data-sorted]");
-                    if (previouslySortedTh)
+                    if(previouslySortedTh)
                         previouslySortedTh.removeAttribute('data-sorted');
 
                     var column = this.get('_currentlySortedColumn');
 
-                    if (column) {
-                        var th = Polymer.dom(this.root).querySelectorAll("th").find(function (el) {
+                    if(column){
+                        var th = Polymer.dom(this.root).querySelectorAll("th").find(function(el){
                             return el.dataColumn === column;
                         });
 
                         //column might have been removed or made inactive
-                        if (th) {
+                        if(th){
                             th.setAttribute('data-sorted', true);
                             th.setAttribute('data-sort-direction', column.sortDirection);
                         }
                     }
                 },
 
-                _internalSort: function (column) {
-                    if (this._internalSortEnabled) {
-                        this._rowKeys.sort(function (a, b) {
-                            if (column.sortDirection == 'desc') {
+                _internalSort: function(column){
+                    if(this._internalSortEnabled) {
+                        this._rowKeys.sort(function(a, b){
+                            if(column.sortDirection == 'desc'){
                                 var c = a;
                                 a = b;
                                 b = c;
@@ -984,80 +901,59 @@
                     }
                 },
 
-                _handleSort: function (ev) {
+                _handleSort: function(ev){
 
                     var column = ev.model.column;
-                    if (column.sortable) {
+                    if(column.sortable){
                         column.set('sortDirection', column.sortDirection == 'asc' ? 'desc' : 'asc');
                         column.set('sorted', true);
                     }
 
                 },
 
-                _cellTapped: function (ev) {
+                _cellTapped: function(ev){
 
                     var PolymerEvent = Polymer.dom(ev);
                     var path = PolymerEvent.path;
                     var cell;
-                    for (var i = 0; i < path.length; i++) {
-                        if (path[i].nodeName.toLowerCase() == 'td') {
+                    for(var i=0;i<path.length;i++){
+                        if(path[i].nodeName.toLowerCase() == 'td'){
                             cell = path[i];
                         }
-                        if (path[i].nodeName.toLowerCase() == 'tr') {
+                        if(path[i].nodeName.toLowerCase() == 'tr'){
                             break;
                         }
                     }
                     var rowModel = this.$.rowRepeat.modelForElement(path[i]);
 
                     // clicks in the checkbox cell do not have a set column
-                    if (ev.model.column) {
+                    if(ev.model.column){
                         var item = this._getByKey(rowModel.rowKey);
-                        ev.model.column.fire('cell-tap', {
-                            key: rowModel.rowKey,
-                            item: item,
-                            target: PolymerEvent.path[0],
-                            originalEvent: ev
-                        }, {bubbles: false});
-                        this.fire('cell-tap', {
-                            column: ev.model.column,
-                            key: rowModel.rowKey,
-                            item: item,
-                            target: PolymerEvent.path[0],
-                            originalEvent: ev
-                        }, {});
-                        this.fire('cell-tap:' + ev.model.column.property, {
-                            column: ev.model.column,
-                            key: rowModel.rowKey,
-                            item: item,
-                            target: PolymerEvent.path[0],
-                            originalEvent: ev
-                        }, {});
+                        ev.model.column.fire('cell-tap', {key:rowModel.rowKey, item:item, target:PolymerEvent.path[0], originalEvent: ev}, {bubbles: false});
+                        this.fire('cell-tap', {column: ev.model.column, key:rowModel.rowKey, item:item, target:PolymerEvent.path[0], originalEvent: ev}, {});
+                        this.fire('cell-tap:' + ev.model.column.property, {column: ev.model.column, key: rowModel.rowKey, item: item, target: PolymerEvent.path[0], originalEvent: ev}, {});
 
-                        if (ev.model.column.dialog) {
+                        if(ev.model.column.dialog){
                             this._initializeInDialog(cell, ev.model.column, item, rowModel.rowKey);
                             var dialogInitialized = true;
                         }
                     }
 
-                    var triggeredEvent = this.fire('row-tap', {
-                        key: rowModel.rowKey,
-                        item: this._getByKey(rowModel.rowKey),
-                        originalEvent: ev
-                    }, {cancelable: true});
-                    if (!triggeredEvent.defaultPrevented && !dialogInitialized) {
-                        if (path[0].nodeName.toLowerCase() == 'td' || (ev.model.column && !ev.model.column.editable)) {
+                    var triggeredEvent = this.fire('row-tap', {key: rowModel.rowKey, item: this._getByKey(rowModel.rowKey), originalEvent: ev}, {cancelable: true});
+                    if(!triggeredEvent.defaultPrevented && !dialogInitialized){
+                        if(path[0].nodeName.toLowerCase() == 'td' || (ev.model.column && !ev.model.column.editable)){
                             this._toggleSelection(rowModel.rowKey);
                             ev.preventDefault();
                         }
-                    } else {
+                    }else{
                         ev.preventDefault();
                     }
 
                 },
 
-                _initializeInDialog: function (cell, column, row, rowKey) {
+                _initializeInDialog: function(cell, column, row, rowKey){
                     var oldCell = this.$.dialog.positionedRelativeTo;
-                    if (oldCell) {
+                    if(oldCell){
                         delete oldCell.instance;
                     }
                     this.$.dialog.positionedRelativeTo = cell;
@@ -1073,32 +969,32 @@
                     //console.log(cell.getBoundingClientRect());
                 },
 
-                _getKeyByItem: function (item) {
+                _getKeyByItem: function(item){
                     return this._dataKeyCollection.getKey(item);
                 },
 
-                _getByKey: function (key) {
-                    if (key === null) {
+                _getByKey: function(key){
+                    if(key === null){
                         return null;
                     }
-                    if (typeof key === 'object') {
+                    if(typeof key === 'object'){
                         return key.map(this._getByKey.bind(this));
                     }
                     return this.get(['data', key]);
                 },
 
-                _getSelectedItems: function () {
+                _getSelectedItems: function(){
                     return this._getByKey(this.selectedKeys);
                 },
 
-                _getIndexById: function (id) {
+                _getIndexById: function(id){
                     return console.warn('This function has been deprecated and removed.');
                     /*return this.data.findIndex(function(item){
                      return item[this.idProperty] == id;
                      }.bind(this));*/
                 },
 
-                _numberOfColumnsPlusOne: function () {
+                _numberOfColumnsPlusOne: function(){
                     return this._columns.length + 1;
                 },
 
@@ -1107,64 +1003,64 @@
                  *
                  * IMPORTANT: This is a property, not a method you should call directly.
                  */
-                customRowStyle: function (rowItem) {
+                customRowStyle: function(rowItem){
 
                 },
 
-                _customRowStyle: function (rowKey) {
+                _customRowStyle: function(rowKey){
                     return this.customRowStyle(this._getByKey(rowKey));
                 },
 
-                _linkSelectedItem: function (selectedKey) {
-                    this.linkPaths('selectedItem', 'data.' + selectedKey);
+                _linkSelectedItem: function(selectedKey){
+                    this.linkPaths('selectedItem', 'data.'+selectedKey);
                 },
 
-                _linkSelectedItems: function () {
+                _linkSelectedItems: function(){
                     var selectedItemsCollection = Polymer.Collection.get(this.selectedItems);
-                    selectedItemsCollection.getKeys().forEach(function (selectedItemKey, i) {
-                        this.linkPaths('selectedItems.' + selectedItemKey, 'data.' + this.selectedKeys[i]);
+                    selectedItemsCollection.getKeys().forEach(function(selectedItemKey, i){
+                        this.linkPaths('selectedItems.'+selectedItemKey, 'data.'+this.selectedKeys[i]);
                     }.bind(this));
                 },
 
-                _triggerDialogResize: function () {
+                _triggerDialogResize: function(){
                     this.$.dialog.setLocationRelativeTo()
                 },
 
-                _noItemsVisible: function () {
+                _noItemsVisible: function(){
                     return this._rowKeys.length === 0;
                 },
 
-                _isEqual: function (a, b) {
+                _isEqual: function(a, b){
                     return a == b;
                 },
 
-                _columnsRendered: function () {
+                _columnsRendered: function(){
                     this._resizeListener();
                 },
 
-                _setPartialSelection: function () {
+                _setPartialSelection: function(){
                     this.set('_partialSelection', this._someChecked());
                 },
-                _resizeListener: function () {
+                _resizeListener: function(){
                     this._renderTooltipsIfOverflow();
                     this._setDynamicColumnsBySize();
                 },
-                _setDynamicColumnsBySize: function () {
+                _setDynamicColumnsBySize: function(){
                     //todo: still needs to be made in to a proper property
                     var padding = 28;
                     var selectable = this.selectable ? 56 : 0;
-                    if (this.resizeBehavior == 'dynamic-columns') {
+                    if(this.resizeBehavior == 'dynamic-columns'){
                         var allColumns = this.queryAllEffectiveChildren('paper-datatable-column');
 
-                        if (allColumns.length > 0) {
+                        if(allColumns.length > 0) {
                             var maxWidth = this.$.container.clientWidth;
 
                             allColumns.sort(function (a, b) {
-                                if (a.resizePriority === -1 && b.resizePriority === -1) {
+                                if(a.resizePriority === -1 && b.resizePriority === -1){
                                     return 0;
-                                } else if (a.resizePriority === -1) {
+                                }else if(a.resizePriority === -1){
                                     return -1;
-                                } else if (b.resizePriority === -1) {
+                                }else if(b.resizePriority === -1){
                                     return 1;
                                 }
                                 return b.resizePriority - a.resizePriority;
@@ -1172,7 +1068,7 @@
 
                             var widthSoFar = selectable - 2 * padding;
                             allColumns.forEach(function (column) {
-                                if (!column.width) {
+                                if(!column.width){
                                     console.error('For dynamic columns to work you have to set the `width` attribute of every column.');
                                 }
                                 widthSoFar += parseFloat(column.width) + padding * 2;
@@ -1185,24 +1081,21 @@
                         }
                     }
                 },
-                _renderTooltipsIfOverflow: function () {
-                    if (this.resizeBehavior == 'fixed') {
-                        if (this._columns.length > 0) {
+                _renderTooltipsIfOverflow: function(){
+                    if(this.resizeBehavior == 'fixed'){
+                        if(this._columns.length > 0){
 
                             var ths = Polymer.dom(this.root).querySelectorAll('th');
-                            ths.forEach((th) = > {
-                                if(th.dataColumn
-                        )
-                            {
+                            ths.forEach((th) => {
+                                if(th.dataColumn){
                                 var column = th.dataColumn;
-                                if (th.scrollWidth > th.offsetWidth) {
+                                if(th.scrollWidth > th.offsetWidth){
                                     column.set('tooltip', column.header);
-                                } else {
+                                }else{
                                     column.set('tooltip', '');
                                 }
                             }
-                        })
-                            ;
+                        });
 
                         }
                     }
