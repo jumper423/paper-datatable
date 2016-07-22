@@ -1,5 +1,10 @@
 # paper-datatable for angular 2
 
+##Install
+```
+bower install --save paper-datatable-angular2
+```
+
 A [material design implementation of a data table](https://www.google.com/design/spec/components/data-tables.html). Let's call this a pretty solid beta.
 
  - Documentation can be found [here](http://david-mulder.github.io/paper-datatable/components/paper-datatable/docs/docs.html?installation)
