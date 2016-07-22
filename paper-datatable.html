@@ -512,13 +512,13 @@ A [material design implementation of a data table](https://www.google.com/design
 					var columns = this.queryAllEffectiveChildren('paper-datatable-column');
 					columns.forEach((column) => {
 						if(!column.beenAttached.state.ready){
-							column.parentNodeRef = this;
-							this.async(function(){
-								column._registerEvilFunctions();
-								column.beenAttached.ready();
-							});
-						}
-					});
+						column.parentNodeRef = this;
+						this.async(function(){
+							column._registerEvilFunctions();
+							column.beenAttached.ready();
+						});
+					}
+				});
 					this.set('_columns', columns.filter((column) => !column.inactive));
 					this.async(function(){
 						this._applySortedIndicatorsToDOM();
@@ -629,7 +629,7 @@ A [material design implementation of a data table](https://www.google.com/design
 									}else{
 										if(cell.instance)
 											delete cell.instance;
-										cell.querySelector('span').innerHTML = cell.dataColumn._formatValue(data)
+										cell.querySelector('span').innerHTML = cell.dataColumn._formatValue(data, rowData);
 										//cell.textContent = data;
 									}
 								}

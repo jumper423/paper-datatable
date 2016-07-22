@@ -294,10 +294,10 @@
 					return instance;
 				},
 
-				_formatValue: function(data){
+				_formatValue: function(data, rowData){
 					data = this._cast(data);
-					if('formatValue' in this){
-						return this.formatValue(data);
+					if('formatValue' in this && typeof this.formatValue === "function"){
+						return this.formatValue(data, rowData);
 					}
 					if(typeof data == 'undefined'){
 						return '';
