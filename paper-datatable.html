@@ -932,6 +932,9 @@
                         ev.model.column.fire('cell-tap', {key:rowModel.rowKey, item:item, target:PolymerEvent.path[0], originalEvent: ev}, {bubbles: false});
                         this.fire('cell-tap', {column: ev.model.column, key:rowModel.rowKey, item:item, target:PolymerEvent.path[0], originalEvent: ev}, {});
                         this.fire('cell-tap:' + ev.model.column.property, {column: ev.model.column, key: rowModel.rowKey, item: item, target: PolymerEvent.path[0], originalEvent: ev}, {});
+                        if (typeof ev.model.column.cellTap === "function") {
+                            ev.model.column.cellTap(item);
+                        }
 
                         if(ev.model.column.dialog){
                             this._initializeInDialog(cell, ev.model.column, item, rowModel.rowKey);
