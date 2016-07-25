@@ -106,7 +106,7 @@
 				</div>
 				<div id="selectionToolbar" class="horizontal center layout fit" data-visible$="[[_selectedToolbarVisible]]">
 					<div class="flex selectionHeader">
-						<span>[[_numberselectedIds]]</span> item selected
+						<span>[[_numberselectedIds]]</span> выбрано
 					</div>
 					<div class="toolbar" data-visible$="{{_singleSelectToolbarVisible}}">
 						<content select="*[toolbar-select-single]"></content>
@@ -124,7 +124,7 @@
 			</div>
 			<div class="horizontal center layout" id="bottomBlock">
 				<div class="flex"></div>
-				<span>Rows per page:</span>
+				<span>Строк:</span>
 				<paper-dropdown-menu no-label-float style="width: 68px;">
 					<paper-menu class="dropdown-content" selected="{{pageSize}}" attr-for-selected="value">
 						<template is="dom-repeat" items="{{pageSizeOptions}}">
@@ -345,7 +345,7 @@
 					if(this.dataSource) {
 						ev.preventDefault();
 						this.firstPage();
-						console.log(ev.detail);
+//						console.log(ev.detail);
 						this._sortProperty = ev.detail.sort.property;
 						this._sortDirection = ev.detail.sort.direction;
 
