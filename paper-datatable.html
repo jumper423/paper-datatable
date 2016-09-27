@@ -511,7 +511,9 @@
                 _queryAndSetColumns: function(){
                     var columns = this.queryAllEffectiveChildren('paper-datatable-column');
                     columns.forEach((column) => {
-                        if(!column.beenAttached.state.ready){
+                        if(typeof column.beenAttached.state === "undefined" ||
+                        typeof column.beenAttached.state.ready === "undefined" ||
+                        !column.beenAttached.state.ready){
                         column.parentNodeRef = this;
                         this.async(function(){
                             column._registerEvilFunctions();
